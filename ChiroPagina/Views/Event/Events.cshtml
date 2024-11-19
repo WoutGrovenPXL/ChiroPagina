@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Event>;
+
+<h1>Al onze activiteiten van dit jaar</h1>
+
+@foreach(Event events in @Model)
+{
+	<a asp-controller="Event" asp-action="Details" asp-route-id="@events.EventId"><h1>@events.EventTitle</h1></a>
+	<p>@events.LongDescription</p>
+	<p>@events.EventDate</p>
+}
